@@ -1,0 +1,19 @@
+# WoW Add-on specific
+*.bak
+*.old
+*.tmp
+WTF/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
