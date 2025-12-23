@@ -1,0 +1,22 @@
+## Interface: 110002
+## Title: CrispyUI
+## Notes: A cosmetic overhaul of the World of Warcraft interface with enhanced visuals and modern styling.
+## Author: AI Voice Workflow
+## Version: 1.0.0
+## SavedVariables: CrispyUIDB
+## X-Category: Interface Enhancements
+## X-Website: https://github.com/iccugs/crispy-umbrella
+## X-License: GPL v3
+
+# Core files
+Core.lua
+
+# UI Enhancement Modules
+Modules\FrameStyling.lua
+Modules\ActionBars.lua
+Modules\UnitFrames.lua
+Modules\Tooltips.lua
+Modules\ChatFrames.lua
+
+# Configuration
+Config.lua
