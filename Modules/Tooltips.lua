@@ -10,7 +10,7 @@ local TT = CUI.Tooltips
 
 -- Apply tooltip enhancements
 function TT:Apply()
-    local config = CUI.db.profile.tooltips
+    local config = CUI.db.tooltips
     
     if not config.enabled then
         return

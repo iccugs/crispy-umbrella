@@ -21,7 +21,7 @@ local actionBars = {
 
 -- Apply action bar enhancements
 function AB:Apply()
-    local config = CUI.db.profile.actionBars
+    local config = CUI.db.actionBars
     
     if not config.enabled then
         return
@@ -100,7 +100,7 @@ end
 function AB:ApplySpacing(spacing)
     -- This would typically use a more advanced layout system
     -- For now, it's a placeholder for future enhancement
-    spacing = spacing or CUI.db.profile.actionBars.buttonSpacing
+    spacing = spacing or CUI.db.actionBars.buttonSpacing
 end
 
 -- Export module

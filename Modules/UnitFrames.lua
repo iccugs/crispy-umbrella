@@ -22,7 +22,7 @@ local unitFrames = {
 
 -- Apply unit frame enhancements
 function UF:Apply()
-    local config = CUI.db.profile.unitFrames
+    local config = CUI.db.unitFrames
     
     if not config.enabled then
         return

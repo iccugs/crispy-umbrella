@@ -36,7 +36,7 @@ local framesToStyle = {
 
 -- Apply styling to all frames
 function FS:Apply()
-    local config = CUI.db.profile.frameStyling
+    local config = CUI.db.frameStyling
     
     if not config.enabled then
         return
@@ -65,7 +65,7 @@ end
 function FS:StyleFrame(frame)
     if not frame then return end
     
-    local config = CUI.db.profile.frameStyling
+    local config = CUI.db.frameStyling
     
     -- Apply backdrop
     CUI:ApplyBackdrop(frame, config)
@@ -92,7 +92,7 @@ end
 function FS:StyleButton(button)
     if not button or button.CrispyStyled then return end
     
-    local config = CUI.db.profile.frameStyling
+    local config = CUI.db.frameStyling
     
     -- Create custom textures
     if button:GetNormalTexture() then

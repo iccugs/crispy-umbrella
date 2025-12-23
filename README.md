@@ -15,7 +15,7 @@ A cosmetic overhaul for the World of Warcraft interface, providing modern stylin
 ## Installation
 
 1. Download the latest release
-2. Extract the `crispy-umbrella` folder to your `World of Warcraft\_retail_\Interface\AddOns\` directory
+2. Extract the `crispy-umbrella` folder to your `World of Warcraft/_retail_/Interface/AddOns/` directory
 3. Rename the folder to `CrispyUI` (optional but recommended)
 4. Restart World of Warcraft or reload UI (`/reload`)
 

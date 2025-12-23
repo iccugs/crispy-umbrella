@@ -18,7 +18,7 @@ local chatFrames = {
 
 -- Apply chat frame enhancements
 function CF:Apply()
-    local config = CUI.db.profile.chatFrames
+    local config = CUI.db.chatFrames
     
     if not config.enabled then
         return
