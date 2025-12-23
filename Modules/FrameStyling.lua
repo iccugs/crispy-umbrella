@@ -53,12 +53,21 @@ function FS:Apply()
     -- Style tooltips background
     self:StyleTooltips()
     
-    -- Apply hook for new frames
-    hooksecurefunc("UIParent_ManageFramePosition", function()
-        C_Timer.After(0.1, function()
-            FS:Apply()
+    -- Apply hook for new frames (with debounce to prevent performance issues)
+    if not self.hookedUIParent then
+        self.hookedUIParent = true
+        self.lastApplyTime = 0
+        
+        hooksecurefunc("UIParent_ManageFramePosition", function()
+            local now = GetTime()
+            if now - FS.lastApplyTime > 1 then  -- Debounce: only apply once per second
+                FS.lastApplyTime = now
+                C_Timer.After(0.1, function()
+                    FS:Apply()
+                end)
+            end
         end)
-    end)
+    end
 end
 
 -- Style individual frame

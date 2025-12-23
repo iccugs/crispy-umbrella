@@ -52,17 +52,24 @@ local function InitializeDB()
         CrispyUIDB = {}
     end
     
-    -- Deep copy defaults if not set
+    -- Deep copy defaults (handles nested tables properly)
+    local function deepCopy(original)
+        local copy
+        if type(original) == "table" then
+            copy = {}
+            for key, value in pairs(original) do
+                copy[key] = deepCopy(value)
+            end
+        else
+            copy = original
+        end
+        return copy
+    end
+    
+    -- Apply defaults if not set
     for key, value in pairs(defaults) do
         if CrispyUIDB[key] == nil then
-            if type(value) == "table" then
-                CrispyUIDB[key] = {}
-                for k, v in pairs(value) do
-                    CrispyUIDB[key][k] = v
-                end
-            else
-                CrispyUIDB[key] = value
-            end
+            CrispyUIDB[key] = deepCopy(value)
         end
     end
     
@@ -79,7 +86,7 @@ eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 eventFrame:SetScript("OnEvent", function(self, event, ...)
     if event == "ADDON_LOADED" then
         local addonName = ...
-        if addonName == "CrispyUI" then
+        if addonName == ADDON_NAME then
             CUI:OnInitialize()
         end
     elseif event == "PLAYER_ENTERING_WORLD" then

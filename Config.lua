@@ -107,11 +107,8 @@ function Config:HandleCommand(input)
     return true -- Command handled
 end
 
--- Register extended commands with core
-if CUI.RegisterSlashCommand then
-    CUI:RegisterSlashCommand("config", function() Config:ExportSettings() end)
-    CUI:RegisterSlashCommand("reset", function() Config:ResetToDefaults() end)
-end
+-- Initialize config on load
+Config:Initialize()
 
 -- Export module
 CUI.Config = Config
